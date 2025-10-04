@@ -12,6 +12,7 @@
 import { useState, useEffect } from 'react'
 import { ColorfullMessag } from "./component/ColorfullMessage";
 
+// Note: named export（基本的にはこっち？）
 export const App = () => {
   // Note: consoleが2回表示される。開発時のみ？StrictMode on なら2回
   console.log('--App--')
