@@ -1,6 +1,5 @@
 // import logo from './logo.svg';
 // import './App.css';
-
 // function App() {
 //   return (
 //     <div className="App">
@@ -8,21 +7,23 @@
 //     </div>
 //   );
 // }
-
 // export default App;
+
+import { ColorfullMessag } from "./component/ColorfullMessage";
 
 export const App = () => {
   const onClickBtn = () => alert();
   const contenStyle = {
     color: 'green',
-    fontSize: '50px'
+    fontSize: '20px'
   }
 
   return (
     // React.fragment or 空タグ
     <>
-      <h1 style={contenStyle}>hh</h1>
-      <p>hogehogefuga</p>
+      <h1>hh</h1>
+      <ColorfullMessag color='blue' >お元気ですか？</ColorfullMessag>
+      <ColorfullMessag color='green' >お元気です</ColorfullMessag>
       <button onClick={onClickBtn}>ボタン</button>
     </>
   );
