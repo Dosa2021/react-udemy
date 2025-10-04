@@ -12,11 +12,18 @@
 // export default App;
 
 export const App = () => {
+  const onClickBtn = () => alert();
+  const contenStyle = {
+    color: 'green',
+    fontSize: '50px'
+  }
+
   return (
     // React.fragment or 空タグ
     <>
-      <h1>hh</h1>
+      <h1 style={contenStyle}>hh</h1>
       <p>hogehogefuga</p>
+      <button onClick={onClickBtn}>ボタン</button>
     </>
   );
 };
