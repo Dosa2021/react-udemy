@@ -9,11 +9,14 @@
 // }
 // export default App;
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { ColorfullMessag } from "./component/ColorfullMessage";
 
 export const App = () => {
-  const [num, setNum ] = useState(0);
+  // Note: consoleが2回表示される。開発時のみ？StrictMode on なら2回
+  console.log('--App--')
+  const [num, setNum] = useState(0);
+  const [isShowFace, setIsShowFace] = useState(true);
   const onClickCountUp = () => {
     // 下2行はやってることは同じ
     // setNum((prev) => prev + 1);
@@ -29,10 +32,24 @@ export const App = () => {
 
     setNum(num + 1);
   };
-  const contenStyle = {
-    color: 'green',
-    fontSize: '20px'
+  const onClickToggle = () => {
+    setIsShowFace(!isShowFace);
   }
+
+  // Note: on/off が効かない。こういうケース時に useEfect を使用する
+  // if (num % 3 === 0) {
+  //   isShowFace || setIsShowFace(true);
+  // } else {
+  //   isShowFace && setIsShowFace(false);
+  // }
+  // Note: useEffect は指定した変数が変更された時にのみ動作する
+  useEffect(() => {
+    if (num % 3 === 0) {
+      isShowFace || setIsShowFace(true);
+    } else {
+      isShowFace && setIsShowFace(false);
+    }
+  }, [num])
 
   return (
     // React.fragment or 空タグ
@@ -42,6 +59,8 @@ export const App = () => {
       <ColorfullMessag color='green' >お元気です</ColorfullMessag>
       <button onClick={onClickCountUp}>カウントアップ</button>
       <p>{num}</p>
+      <button onClick={onClickToggle}>on/off</button>
+      {isShowFace && <p>hoge hoge</p>}
     </>
   );
 };

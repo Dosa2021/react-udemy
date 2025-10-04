@@ -8,6 +8,8 @@ npm start
 ・State
   ・useState
   ※ Angular コンポーネントパターンを採用
+・再レンダリングと副作用（useEfect）
+  ・propsが更新された時など再レンダリング
 
 【参考】
 ・reactバージョン変更
