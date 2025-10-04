@@ -4,6 +4,10 @@ npm start
 ・コンポーネント
 　・一般的？にはファイル名は〜.jsx
 ・Reactでのイベント・スタイル
+・Props
+・State
+  ・useState
+  ※ Angular コンポーネントパターンを採用
 
 【参考】
 ・reactバージョン変更

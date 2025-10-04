@@ -9,10 +9,26 @@
 // }
 // export default App;
 
+import { useState } from 'react'
 import { ColorfullMessag } from "./component/ColorfullMessage";
 
 export const App = () => {
-  const onClickBtn = () => alert();
+  const [num, setNum ] = useState(0);
+  const onClickCountUp = () => {
+    // 下2行はやってることは同じ
+    // setNum((prev) => prev + 1);
+    // setNum(num + 1);
+
+    // 1ずつ増える
+    // setNum(num + 1);
+    // setNum(num + 1);
+
+    // 2ずつ増える
+    // setNum((prev) => prev + 1);
+    // setNum((prev) => prev + 1);
+
+    setNum(num + 1);
+  };
   const contenStyle = {
     color: 'green',
     fontSize: '20px'
@@ -24,7 +40,8 @@ export const App = () => {
       <h1>hh</h1>
       <ColorfullMessag color='blue' >お元気ですか？</ColorfullMessag>
       <ColorfullMessag color='green' >お元気です</ColorfullMessag>
-      <button onClick={onClickBtn}>ボタン</button>
+      <button onClick={onClickCountUp}>カウントアップ</button>
+      <p>{num}</p>
     </>
   );
 };
